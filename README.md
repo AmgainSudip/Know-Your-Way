@@ -105,7 +105,7 @@ The proposed architecture describes how information will move through the applic
 
 ### Architecture Diagram
 
-![Application Architecture](docs/architecture.png)
+![Application Architecture](docs/Architecture.png)
 
 ---
 
