@@ -9,7 +9,7 @@
 ---
 ## 1. Project Overview
 
-**Application Name:** EvacuationFlow
+**Application Name:** Know Your Way
 
 **Project Option:** Database-Enabled Application
 
@@ -34,7 +34,7 @@ Unlike a basic weather application, Know Your Way aims to connect disaster infor
 
 ## 2. Application Features
 
-The initial version of EvacuationFlow will include the following features:
+The initial version of this app will include the following features:
 
 - **Feature 1: Interactive Map** – Display a map using an external map service. Users will be able to search for or select a geographical location.
 
@@ -71,7 +71,7 @@ The following technologies and libraries are planned for development:
 
 ## 4. Data, Model, and API Plan
 
-EvacuationFlow will primarily rely on external APIs rather than training a machine learning model.
+This app will primarily rely on external APIs rather than training a machine learning model.
 
 ### Planned Data Sources
 
@@ -114,7 +114,7 @@ The proposed architecture describes how information will move through the applic
 The following is the proposed folder structure. It may change during development.
 
 ```text
-EvacuationFlow/
+Know Your Way Flow/
 │
 ├── app.py                  # Main Streamlit application
 │
