@@ -63,14 +63,14 @@ The following technologies and libraries are planned for development:
 | NetworkX | Representing road networks as graphs and calculating possible routes |
 | Folium / Streamlit-Folium | Displaying interactive maps and routes |
 | Open-Meteo API | Retrieving current weather conditions and forecasts |
-| National Weather Service (NWS) API | Retrieving official emergency weather alerts |
+| National Weather Service (NWS) API | Retrieving official emergency alerts and warnings |
 | OpenStreetMap APIs | Providing location search and road network information |
-| SQLite | Storing selected locations, emergency alerts, destinations, and saved routes |
+| SQLite | Storing selected locations, historical alerts, destinations, and saved routes |
 | SQLAlchemy | Connecting Python application components to the SQLite database |
 
 The final technology list may change depending on API availability and implementation requirements.
 
-**Database Implementation:**
+### Database Implementation
 
 SQLite will be used as the application's database to store and manage information. SQLAlchemy will connect the Python application to the database and handle database operations.
 
@@ -93,28 +93,29 @@ This app will primarily rely on external APIs rather than training a machine lea
 
 **Weather API: Open-Meteo API**
 
-Retrieve current weather conditions and forecasts for selected locations. This information will help users monitor conditions associated with potential hazards, including temperature, precipitation, and wind speed.
+The application will use the Open-Meteo Forecast API to retrieve current weather conditions and forecasts for selected locations. This information will help users monitor conditions associated with potential hazards, including temperature, precipitation, and wind speed.
 
-API: https://api.open-meteo.com/v1/forecast
+API Provider and Documentation: [Open-Meteo Weather Forecast API](https://open-meteo.com/en/docs)
 
 **Official Emergency Alerts API: National Weather Service (NWS) API**
 
-Retrieve active warnings and advisories issued by the National Weather Service. These alerts will be used to identify areas affected by severe weather, flooding, and hurricanes.
+The application will use the National Weather Service API to retrieve official weather alerts, including watches, warnings, and advisories. These alerts will help identify areas affected by hazards such as severe storms, flooding, and hurricanes.
 
-API: https://api.weather.gov/alerts/active
+API Provider and Documentation: [National Weather Service API](https://www.weather.gov/documentation/services-web-api)
 
 **Map and Location Data: OpenStreetMap APIs**
 
-Use OpenStreetMap to display geographical locations, identify destinations, and obtain road network information.
+The application will use OpenStreetMap data for geographical locations and road network information.
 
 The following services are planned:
 
 - **Nominatim API:** Used to search for locations and convert location names or addresses into geographical coordinates.
+
+  API Provider and Documentation: [OpenStreetMap Nominatim](https://nominatim.org/release-docs/latest/)
+
 - **Overpass API:** Used to retrieve road network information from OpenStreetMap for route planning.
 
-Nominatim: https://nominatim.openstreetmap.org/
-
-Overpass API: https://overpass-api.de/api/interpreter
+  API Provider and Documentation: [OpenStreetMap Overpass API](https://wiki.openstreetmap.org/wiki/Overpass_API)
 
 ### Database Integration
 
@@ -140,7 +141,7 @@ The application will prioritize official emergency alerts over general weather-b
 
 The proposed architecture describes how information will move through the application.
 
-**Planned Data Flow:**
+### Planned Data Flow:
 
 1. User selects a location and destination through the Streamlit dashboard.
 2. The application retrieves weather, emergency alert, and map information through external APIs.
