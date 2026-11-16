@@ -12,7 +12,7 @@
 
 **Application Name:** Know Your Way
 
-**Project Option:** Database-Enabled Application
+**Project Option:** API-Integrated Web Application
 
 ### Problem Statement
 
