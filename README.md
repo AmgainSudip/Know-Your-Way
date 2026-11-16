@@ -123,7 +123,7 @@ The proposed architecture describes how information will move through the applic
 
 ### Architecture Diagram
 
-![Know Your Way Application Architecture](docs/architecture.png)
+![Know Your Way Application Architecture](docs/Architecture.png)
 
 ## 6. Preliminary Project Structure
 
