@@ -1,10 +1,12 @@
 # CIS 3400 – Advanced Programming
-**Project 2: Python Application Development**
+## Project 2: Python Application Development
 
 **Student Name:** Sudip Amgain  
 **Project Title:** Know Your Way  
 **Course:** CIS 3400 – Advanced Programming  
 **Final Presentation:** December 8, 2026
+
+---
 
 ## 1. Project Overview
 
@@ -28,6 +30,8 @@ The application is intended for individuals living in or traveling through areas
 - Uses Python graph algorithms to calculate and display possible evacuation routes.
 - Unlike a basic weather application, Know Your Way aims to connect disaster information with location-based route planning in a single interface.
 
+---
+
 ## 2. Application Features
 
 The initial version of this app will include the following features:
@@ -44,6 +48,8 @@ Users will interact with the application through a Streamlit dashboard. They wil
 
 The initial implementation will prioritize a limited geographical area and a small set of disaster types to keep the project manageable.
 
+---
+
 ## 3. Technologies Used
 
 The following technologies and libraries are planned for development:
@@ -57,23 +63,27 @@ The following technologies and libraries are planned for development:
 | NetworkX | Representing road networks as graphs and calculating possible routes |
 | Folium / Streamlit-Folium | Displaying interactive maps and routes |
 | Open-Meteo API | Retrieving current weather conditions and forecasts |
-| National Weather Service (NWS) API | Retrieving official weather warnings, watches, and advisories |
-| OpenStreetMap (OSM) APIs | Providing geographical, location, and road network information |
-| SQLite | Storing selected locations, destinations, and historical emergency alerts |
-| SQLAlchemy | Connecting Python application components to the SQLite database and managing database operations |
+| National Weather Service (NWS) API | Retrieving official emergency weather alerts |
+| OpenStreetMap APIs | Providing location search and road network information |
+| SQLite | Storing selected locations, emergency alerts, destinations, and saved routes |
+| SQLAlchemy | Connecting Python application components to the SQLite database |
+
+The final technology list may change depending on API availability and implementation requirements.
 
 **Database Implementation:**
 
-SQLite will be used as the application's database to store and manage information retrieved and generated during application use. The database will contain the following tables:
+SQLite will be used as the application's database to store and manage information. SQLAlchemy will connect the Python application to the database and handle database operations.
 
-- **Locations:** Stores selected locations, including location names, latitude, longitude, and date added.
-- **Alerts:** Stores emergency alert information, including alert IDs, event types, severity, affected areas, descriptions, effective dates, and expiration dates.
-- **Destinations:** Stores selected destinations, such as emergency shelters or other locations users may want to reach, including their names and coordinates.
-- **Saved Routes:** Stores calculated routes, including starting locations, destinations, route distances, and calculation dates.
+The database will include the following tables:
 
-The application will use SQLAlchemy to perform database operations such as inserting, retrieving, updating, and deleting records. This will allow previously selected locations and historical alert information to remain available instead of relying entirely on temporary API responses.
+- **Locations:** Stores selected locations, including location names and geographical coordinates.
+- **Alerts:** Stores emergency alert information, including alert type, severity, affected area, description, and expiration date.
+- **Destinations:** Stores selected destinations, such as emergency shelters or other locations users may want to reach.
+- **Saved Routes:** Stores previously calculated routes, including starting locations, destinations, distances, and calculation dates.
 
-The final technology list may change depending on API availability and implementation requirements.
+The application will be able to insert, retrieve, update, and delete records. This will allow selected locations and historical alert information to remain available between sessions instead of relying entirely on temporary API responses.
+
+---
 
 ## 4. Data, Model, and API Plan
 
@@ -83,34 +93,38 @@ This app will primarily rely on external APIs rather than training a machine lea
 
 **Weather API: Open-Meteo API**
 
-The application will use the Open-Meteo Forecast API to retrieve current weather conditions and forecasts for selected locations. It will use geographical coordinates (latitude and longitude) to retrieve weather information, including temperature, precipitation, wind speed, and weather conditions.
+Retrieve current weather conditions and forecasts for selected locations. This information will help users monitor conditions associated with potential hazards, including temperature, precipitation, and wind speed.
 
 API: https://api.open-meteo.com/v1/forecast
 
 **Official Emergency Alerts API: National Weather Service (NWS) API**
 
-The application will use the National Weather Service API to retrieve official weather alerts, including watches, warnings, and advisories. These alerts will help identify areas affected by hazards such as severe storms, flooding, and hurricanes.
+Retrieve active warnings and advisories issued by the National Weather Service. These alerts will be used to identify areas affected by severe weather, flooding, and hurricanes.
 
 API: https://api.weather.gov/alerts/active
 
 **Map and Location Data: OpenStreetMap APIs**
 
-The application will use OpenStreetMap data for geographical locations and road network information.
+Use OpenStreetMap to display geographical locations, identify destinations, and obtain road network information.
+
+The following services are planned:
 
 - **Nominatim API:** Used to search for locations and convert location names or addresses into geographical coordinates.
 - **Overpass API:** Used to retrieve road network information from OpenStreetMap for route planning.
 
-These services will provide the geographical data needed to display locations and construct road networks for evacuation route calculations.
+Nominatim: https://nominatim.openstreetmap.org/
+
+Overpass API: https://overpass-api.de/api/interpreter
 
 ### Database Integration
 
-SQLite will be incorporated as the application's persistent database. Information retrieved from external APIs and selected by users will be processed and stored when appropriate.
+SQLite will be incorporated into the application to store information retrieved from external APIs and information selected by users.
 
-The database will store selected locations, destinations, emergency alert records, and previously calculated routes. For example, when a user selects a location, the application can save its coordinates in the Locations table. When an emergency alert is retrieved, relevant information can be stored in the Alerts table along with its expiration date.
+For example, when a user selects a location, its name and coordinates can be stored in the Locations table. When emergency alerts are retrieved, relevant information can be stored in the Alerts table, including its severity, affected area, and expiration date.
 
-The application will retrieve stored information when needed and update records when new information becomes available. SQLAlchemy will be used to manage communication between Python and SQLite.
+The application will retrieve stored information when needed and update records when new information becomes available. Previously calculated routes and selected destinations can also be stored for future reference.
 
-This database will allow the application to maintain selected locations and historical information between sessions rather than losing all information when the application is closed.
+SQLAlchemy will be used to manage communication between Python and SQLite. This will allow the application to maintain selected locations and historical information between sessions.
 
 ### Data Processing and Route Planning
 
@@ -119,6 +133,8 @@ Python will process the information retrieved from these APIs and organize it ac
 A shortest-path algorithm, such as Dijkstra's algorithm, will be used to calculate possible routes between a user's starting location and selected destination. If reliable road closure information is available, affected roads may be excluded from route calculations.
 
 The application will prioritize official emergency alerts over general weather-based indications. It will not independently predict disasters or guarantee that a calculated route is safe.
+
+---
 
 ## 5. Preliminary Application Architecture
 
@@ -133,9 +149,11 @@ The proposed architecture describes how information will move through the applic
 5. NetworkX processes the road network and calculates a possible evacuation route when requested.
 6. The application displays the map, alerts, weather information, and suggested route to the user.
 
-**Architecture Diagram**
-The following diagram illustrates how the application components interact, including the Streamlit dashboard, external APIs.
-![Know Your Way Application Architecture](docs/architecture.png)
+### Architecture Diagram
+
+![Know Your Way Application Architecture](docs/Architecture.png)
+
+---
 
 ## 6. Preliminary Project Structure
 
@@ -165,6 +183,8 @@ Know Your Way Flow/
 └── README.md               # Project documentation
 ```
 
+---
+
 ## 7. Anticipated Challenges
 
 **Challenge 1: External API Integration**
@@ -183,6 +203,8 @@ Matching emergency alerts to a user's selected location may require geographical
 
 Weather information and emergency alerts may change frequently. The application must clearly distinguish official warnings from general weather information and avoid presenting calculated routes as guaranteed safe evacuation paths.
 
+---
+
 ## 8. AI-Assisted Development Disclosure
 
 **AI Tools Used:** ChatGPT
@@ -196,6 +218,8 @@ AI assistance may be used during project planning, understanding external APIs, 
 I will be responsible for designing the application, selecting and integrating the APIs, implementing the Python processing and routing algorithms, developing the Streamlit interface, and testing the application. I will review and modify AI-assisted code to ensure that I understand how the application works.
 
 **Student statement:** I will review, test, and be able to explain the code and technologies used in my application, including code developed with AI assistance.
+
+---
 
 ## 9. Project Links
 
