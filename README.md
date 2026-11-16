@@ -134,8 +134,8 @@ The proposed architecture describes how information will move through the applic
 6. The application displays the map, alerts, weather information, and suggested route to the user.
 
 **Architecture Diagram**
-
-Application Architecture
+The following diagram illustrates how the application components interact, including the Streamlit dashboard, external APIs.
+![Know Your Way Application Architecture](docs/architecture.png)
 
 ## 6. Preliminary Project Structure
 
