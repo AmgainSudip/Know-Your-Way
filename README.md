@@ -194,12 +194,49 @@ I will be responsible for designing the application, selecting and integrating t
 
 ## 9. Project Links
 
-**Deployed Application:** To be added after deployment.
+**Deployed Application:** [Know Your Way](https://knowyourway.streamlit.app/)
+
+**GitHub Repository:** [AmgainSudip/Know-Your-Way](https://github.com/AmgainSudip/Know-Your-Way)
+
+## 10. Deliverable 2 Status — Monday, November 23
+
+**Deliverable 2: 25 points — Submit and demonstrate**
+
+### Completed and Working
+
+- Working Streamlit prototype with a location search form.
+- Initial integration with Open-Meteo for current weather conditions.
+- National Weather Service integration for location-based official alerts and risk information.
+- OpenStreetMap/Nominatim location search and interactive Folium map display.
+- Nearby emergency shelter search, filtering, availability information, and mapped shelter results.
+- Possible route calculation using OSRM and, for nearby routes, OpenStreetMap road data with NetworkX.
+- DriveNC integration for Rowan County traffic events and route-area closure checks when `DRIVENC_API_KEY` is configured.
+- Google Maps navigation links for the selected start or the user's current location.
+- Initial automated tests for map, road closure, routing, and shelter behavior.
+
+### Core Interaction Demonstrated
+
+1. Enter an origin and optional destination.
+2. View the location's risk level, weather, and official NWS alerts.
+3. Search for mapped emergency shelters near the starting location.
+4. Select an entered destination or eligible shelter as a route target.
+5. View the possible route, distance, directions, closure status, and navigation options.
+6. View shelters and routes on the interactive location overview map.
+
+### Work Remaining
+
+- Finish additional end-to-end testing and improve handling for unavailable or incomplete external API responses.
+- Add final screenshots and updated presentation materials.
+- Complete final deployment verification and document setup instructions.
+- Continue usability and visual testing, including mobile and smaller-screen layouts.
+- Review route and closure limitations and make the final accuracy and reliability disclosures clear.
+
+**Repository Status:** The project source, README, architecture diagram, modules, tests, and Streamlit configuration are maintained in the GitHub repository above.
 
 ### Development Timeline
 
 **Deliverable 1 – November 16:** Complete project proposal, planned features, technologies, architecture diagram, and preliminary project structure.
 
-**Deliverable 2 – November 23:** Update the README with implementation progress and initial testing.
+**Deliverable 2 – November 23:** Submit and demonstrate the working prototype, repository, core interaction, and implementation status summary.
 
 **Final Deliverable – December 8:** Complete application development, testing, documentation, screenshots, and final project presentation.

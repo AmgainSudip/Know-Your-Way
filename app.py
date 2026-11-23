@@ -60,14 +60,19 @@ st.markdown(
         color: #65758a !important;
         opacity: 1;
       }
-      [data-testid="stAlert"] {
-        background: #edf4f8 !important;
+      div[data-testid="stAlert"],
+      div[data-testid="stAlert"] > div {
+        background-color: #edf4f8 !important;
         border: 1px solid #cbd9e6 !important;
         border-radius: 10px;
       }
-      [data-testid="stAlert"] p,
-      [data-testid="stAlert"] div,
-      [data-testid="stAlert"] span {
+      div[data-testid="stAlert"] > div > div,
+      div[data-testid="stAlert"] [data-testid="stMarkdownContainer"] {
+        background-color: transparent !important;
+      }
+      div[data-testid="stAlert"] p,
+      div[data-testid="stAlert"] div,
+      div[data-testid="stAlert"] span {
         color: #172b4d !important;
       }
       [data-testid="stExpander"] {
