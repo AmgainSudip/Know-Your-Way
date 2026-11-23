@@ -125,9 +125,9 @@ The proposed architecture describes how information will move through the applic
 
 ![Know Your Way Application Architecture](docs/Architecture.png)
 
-## 6. Preliminary Project Structure
+## 6. Current Project Structure
 
-The following is the proposed folder structure. It may change during development.
+The current project is organized as follows:
 
 ```text
 Know Your Way/
@@ -138,13 +138,22 @@ Know Your Way/
 │   ├── weather.py          # Weather API integration
 │   ├── alerts.py           # Emergency alert retrieval
 │   ├── maps.py             # Map visualization and location handling
-│   └── routing.py          # Graph construction and route calculations
+│   ├── shelters.py         # Nearby shelter search and filtering
+│   ├── road_closures.py    # DriveNC closure and traffic event checks
+│   └── routing.py          # OSRM and OpenStreetMap route calculations
 │
-├── data/
-│   └── sample_data.csv     # Sample data for development and testing
+├── tests/
+│   ├── conftest.py         # Test setup and project path configuration
+│   ├── test_maps.py        # Map helper tests
+│   ├── test_road_closures.py
+│   ├── test_routing.py
+│   └── test_shelters.py
 │
 ├── docs/
-│   └── architecture.png    # Application architecture diagram
+│   └── Architecture.png    # Application architecture diagram
+│
+├── .streamlit/
+│   └── config.toml         # Streamlit configuration
 │
 ├── requirements.txt        # Project dependencies
 ├── .gitignore              # Files excluded from Git
