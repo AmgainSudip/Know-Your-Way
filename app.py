@@ -187,6 +187,9 @@ st.markdown(
       .st-key-selected_start_navigation [data-testid="stLinkButton"] a * {
         color: #176849 !important;
       }
+      .st-key-selected_start_navigation [data-testid="stLinkButton"] a {
+        background: #ffffff !important;
+      }
       .st-key-current_location_navigation [data-testid="stLinkButton"] a:hover,
       .st-key-current_location_navigation [data-testid="stLinkButton"] a:active,
       .st-key-current_location_navigation [data-testid="stLinkButton"] a:focus-visible,
