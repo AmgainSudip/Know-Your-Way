@@ -150,7 +150,9 @@ Know Your Way/
 │   └── test_shelters.py
 │
 ├── docs/
-│   └── Architecture.png    # Application architecture diagram
+│   ├── Architecture.png    # Application architecture diagram
+│   ├── prototypeimage1.png # Deliverable 2: location, alerts, and weather prototype
+│   └── prototypeimage2.png # Deliverable 2: route planning and map prototype
 │
 ├── .streamlit/
 │   └── config.toml         # Streamlit configuration
@@ -229,6 +231,12 @@ I will be responsible for designing the application, selecting and integrating t
 - Continue usability and visual testing, including mobile and smaller-screen layouts.
 - Review route and closure limitations and make the final accuracy and reliability disclosures clear.
 
+### Planned Enhancements
+
+- Let users choose a future travel date and destination to check conditions for a planned trip.
+- Offer daily email notifications when relevant alerts are active for a user's saved destination or planned trip.
+- Persist travel plans, destinations, and notification preferences in a database, with safe handling of concurrent users and updates.
+
 **Repository Status:** The project source, README, architecture diagram, modules, tests, and Streamlit configuration are maintained in the GitHub repository above.
 
 ### Development Timeline
@@ -238,3 +246,9 @@ I will be responsible for designing the application, selecting and integrating t
 **Deliverable 2 – November 23:** Submit and demonstrate the working prototype, repository, core interaction, and implementation status summary.
 
 **Final Deliverable – December 8:** Complete application development, testing, documentation, screenshots, and final project presentation.
+
+### Deliverable 2 Prototype Images
+
+![Know Your Way prototype showing location search, risk, weather, and alerts](docs/prototypeimage1.png)
+
+![Know Your Way prototype showing route planning and the location overview map](docs/prototypeimage2.png)
