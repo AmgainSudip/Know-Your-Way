@@ -176,18 +176,23 @@ st.markdown(
       .st-key-shelter_211_link [data-testid="stLinkButton"] a:hover * {
         color: #14583e !important;
       }
-      .st-key-current_location_navigation [data-testid="stLinkButton"] a {
+      .st-key-current_location_navigation [data-testid="stLinkButton"] a,
+      .st-key-selected_location_navigation [data-testid="stLinkButton"] a {
         background: #d9f3e5 !important;
         border: 1px solid #83c7a2 !important;
         color: #176849 !important;
         font-weight: 650;
       }
-      .st-key-current_location_navigation [data-testid="stLinkButton"] a * {
+      .st-key-current_location_navigation [data-testid="stLinkButton"] a *,
+      .st-key-selected_location_navigation [data-testid="stLinkButton"] a * {
         color: #176849 !important;
       }
       .st-key-current_location_navigation [data-testid="stLinkButton"] a:hover,
       .st-key-current_location_navigation [data-testid="stLinkButton"] a:active,
-      .st-key-current_location_navigation [data-testid="stLinkButton"] a:focus-visible {
+      .st-key-current_location_navigation [data-testid="stLinkButton"] a:focus-visible,
+      .st-key-selected_location_navigation [data-testid="stLinkButton"] a:hover,
+      .st-key-selected_location_navigation [data-testid="stLinkButton"] a:active,
+      .st-key-selected_location_navigation [data-testid="stLinkButton"] a:focus-visible {
         background: #c8ecd8 !important;
         border-color: #65b88b !important;
         color: #14583e !important;
@@ -195,7 +200,10 @@ st.markdown(
       }
       .st-key-current_location_navigation [data-testid="stLinkButton"] a:hover *,
       .st-key-current_location_navigation [data-testid="stLinkButton"] a:active *,
-      .st-key-current_location_navigation [data-testid="stLinkButton"] a:focus-visible * {
+      .st-key-current_location_navigation [data-testid="stLinkButton"] a:focus-visible *,
+      .st-key-selected_location_navigation [data-testid="stLinkButton"] a:hover *,
+      .st-key-selected_location_navigation [data-testid="stLinkButton"] a:active *,
+      .st-key-selected_location_navigation [data-testid="stLinkButton"] a:focus-visible * {
         color: #14583e !important;
       }
       [data-testid="stExpander"] [data-testid="stLinkButton"] a {
@@ -672,11 +680,13 @@ if route:
             type="primary",
             use_container_width=True,
         )
-    selected_navigation.link_button(
-        "Navigate from selected start",
-        selected_start_url,
-        use_container_width=True,
-    )
+    with selected_navigation.container(key="selected_location_navigation"):
+        st.link_button(
+            "Navigate from selected start",
+            selected_start_url,
+            type="primary",
+            use_container_width=True,
+        )
     st.caption(
         "Current-location navigation uses Google Maps' device location; the map's location button "
         "asks your browser for permission. Google Maps may choose a different route than the one "
