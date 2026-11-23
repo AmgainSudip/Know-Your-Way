@@ -86,6 +86,22 @@ st.markdown(
       [data-testid="stExpander"] li {
         color: #172b4d !important;
       }
+      [data-testid="stExpander"] details,
+      [data-testid="stExpander"] details > summary,
+      [data-testid="stExpander"] details > div {
+        background: #edf4f8 !important;
+      }
+      [data-testid="stExpander"] details > summary:hover,
+      [data-testid="stExpander"] details > summary:active,
+      [data-testid="stExpander"] details > summary:focus,
+      [data-testid="stExpander"] details > summary:focus-visible {
+        background: #dceaf2 !important;
+        color: #172b4d !important;
+      }
+      [data-testid="stExpander"] details > summary:focus-visible {
+        outline: 2px solid #83a9bf;
+        outline-offset: -2px;
+      }
       [data-testid="stVerticalBlock"],
       [data-testid="stHorizontalBlock"] {
         color: #172b4d;
@@ -180,6 +196,34 @@ st.markdown(
       .st-key-current_location_navigation [data-testid="stLinkButton"] a:hover *,
       .st-key-current_location_navigation [data-testid="stLinkButton"] a:active *,
       .st-key-current_location_navigation [data-testid="stLinkButton"] a:focus-visible * {
+        color: #14583e !important;
+      }
+      [data-testid="stExpander"] [data-testid="stLinkButton"] a {
+        background: #d9f3e5 !important;
+        border: 1px solid #83c7a2 !important;
+        color: #176849 !important;
+        font-weight: 650;
+      }
+      [data-testid="stExpander"] [data-testid="stLinkButton"] a *,
+      [data-testid="stExpander"] [data-testid="stLinkButton"] a:hover *,
+      [data-testid="stExpander"] [data-testid="stLinkButton"] a:active *,
+      [data-testid="stExpander"] [data-testid="stLinkButton"] a:focus *,
+      [data-testid="stExpander"] [data-testid="stLinkButton"] a:focus-visible * {
+        color: #176849 !important;
+      }
+      [data-testid="stExpander"] [data-testid="stLinkButton"] a:hover,
+      [data-testid="stExpander"] [data-testid="stLinkButton"] a:active,
+      [data-testid="stExpander"] [data-testid="stLinkButton"] a:focus,
+      [data-testid="stExpander"] [data-testid="stLinkButton"] a:focus-visible {
+        background: #c8ecd8 !important;
+        border-color: #65b88b !important;
+        color: #14583e !important;
+        box-shadow: 0 0 0 0.2rem rgba(101, 184, 139, 0.25);
+      }
+      [data-testid="stExpander"] [data-testid="stLinkButton"] a:hover *,
+      [data-testid="stExpander"] [data-testid="stLinkButton"] a:active *,
+      [data-testid="stExpander"] [data-testid="stLinkButton"] a:focus *,
+      [data-testid="stExpander"] [data-testid="stLinkButton"] a:focus-visible * {
         color: #14583e !important;
       }
       .risk-card {

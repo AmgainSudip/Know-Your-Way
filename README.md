@@ -196,8 +196,6 @@ I will be responsible for designing the application, selecting and integrating t
 
 **Deployed Application:** [Know Your Way](https://knowyourway.streamlit.app/)
 
-**GitHub Repository:** [AmgainSudip/Know-Your-Way](https://github.com/AmgainSudip/Know-Your-Way)
-
 ## 10. Deliverable 2 Status — Monday, November 23
 
 **Deliverable 2: 25 points — Submit and demonstrate**
